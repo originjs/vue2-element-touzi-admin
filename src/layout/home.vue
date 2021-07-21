@@ -46,7 +46,7 @@
         }
     }
 </script>
-<style scoped lang='less'>
+<style lang="less" scoped>
     .home{
         .menu_right{
             overflow: auto;

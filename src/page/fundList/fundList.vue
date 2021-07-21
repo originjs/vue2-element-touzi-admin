@@ -40,7 +40,7 @@
                 label="籍贯"
                 align='center'
                 >
-                 <template slot-scope="scope">  
+                 <template v-slot="scope">  
                     <span style="color:#00d053">+ {{ scope.row.tableAddress || scope.row.address }}</span>
                 </template>
             </el-table-column>
@@ -50,7 +50,7 @@
                 align='center'
                 sortable
                 width="170">
-                <template slot-scope="scope">
+                <template v-slot="scope">
                     <el-icon name="time"></el-icon>
                     <span style="margin-left: 10px">{{ scope.row.createTime }}</span>
                 </template>
@@ -70,7 +70,7 @@
                 align='center'
                 width="130"
                 sortable> 
-                <template slot-scope="scope">  
+                <template v-slot="scope">  
                     <span style="color:#00d053">+ {{ scope.row.income }}</span>
                 </template>
             </el-table-column>
@@ -80,7 +80,7 @@
                 align='center'
                 width="130"
                 sortable>
-                <template slot-scope="scope">  
+                <template v-slot="scope">  
                     <span style="color:#f56767">{{ scope.row.pay }}</span>
                 </template>
             </el-table-column>
@@ -90,7 +90,7 @@
                 align='center'
                 width="130"
                 sortable>
-                <template slot-scope="scope">  
+                <template v-slot="scope">  
                     <span style="color:#4db3ff">{{ scope.row.accoutCash }}</span>
                 </template>
             </el-table-column>
@@ -99,7 +99,7 @@
                 align='center'
                 label="操作"
                 width="180">
-                <template slot-scope='scope'>
+                <template v-slot='scope'>
                     <el-button 
                         type="warning" 
                         icon='edit' 
@@ -343,5 +343,3 @@
     }
      
 </style>
-
-

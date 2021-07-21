@@ -16,29 +16,29 @@
                 :active-text-color="menuObj.activeTextColor"
                 :style="{width:sidebar.width+'px'}"
                 >
-                    <template v-for="(item,index) in permission_routers">
+                    <template v-for="(item,index) in permission_routers" :key="index">
                         <!--表示 有一级菜单-->
-                        <router-link v-if="!item.hidden && item.noDropdown" :to="item.path+'/'+item.children[0].path" :key="index">
+                        <router-link v-if="!item.hidden && item.noDropdown" :to="item.path+'/'+item.children[0].path" >
                             <el-menu-item class="dropItem" 
                                 :index="item.path+'/'+item.children[0].path"
                                 >
                                 <icon-svg v-if="item.meta.icon" :icon-class="item.meta.icon" />
-                                <span v-if="item.meta.title" slot="title">{{ $t(`commons.${item.name}`)}}</span> 
+                                <template v-slot:title><span v-if="item.meta.title" >{{ $t(`commons.${item.name}`)}}</span></template> 
                             </el-menu-item>
                         </router-link>
 
                         <!--表示 有二级或者多级菜单 -->
-                        <el-submenu v-if="item.children  && item.children.length >= 1 && !item.hidden && !item.noDropdown"  :index="item.path" :key="index">
-                            <template slot="title">
+                        <el-submenu v-if="item.children  && item.children.length >= 1 && !item.hidden && !item.noDropdown"  :index="item.path" >
+                            <template v-slot:title>
                                 <icon-svg v-if="item.meta.icon" :icon-class="item.meta.icon" />
-                                <span v-if="item.meta.title" slot="title">{{ $t(`commons.${item.name}`)}}</span>
+                                <span v-if="item.meta.title" >{{ $t(`commons.${item.name}`)}}</span>
                             </template>
                             <!--直接定位到子路由上，子路由也可以实现导航功能-->
                             <router-link v-for="(citem,cindex) in item.children" :to="getIindex(citem,item,cindex)"  :key="cindex">
                                 <el-menu-item 
                                     v-if="citem.meta.routerType != 'topmenu' && citem.meta.title"
                                     :index="getIindex(citem,item,cindex)">
-                                    <span slot="title"> {{ $t(`commons.${citem.name}`)}}</span>
+                                    <template v-slot:title><span > {{ $t(`commons.${citem.name}`)}}</span></template>
                                 </el-menu-item> 
                             </router-link>
                         </el-submenu>

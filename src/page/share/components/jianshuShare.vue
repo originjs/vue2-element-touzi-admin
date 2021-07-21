@@ -70,15 +70,26 @@
 
 <script>
 	export default {
-	  name:'jianshuShare',
-	  data(){
-			return {
-				
-			}
+        emits: [
+            "shareToWeixin",
+            "shareToQQ",
+            "shareToQQzone",
+            "shareToWeibo",
+            "shareToDouban"
+        ],
+
+        name:'jianshuShare',
+
+        data(){
+              return {
+                  
+              }
+          },
+
+        mounted(){
 		},
-		mounted(){
-		},
-		methods: {
+
+        methods: {
 			shareToWeixin(){
                 this.$emit('shareToWeixin');
 			},
@@ -96,7 +107,7 @@
 			}
 
 		}
-	}
+    };
 </script>
 
 <style lang="less" scoped>

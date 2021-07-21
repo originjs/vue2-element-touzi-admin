@@ -22,7 +22,7 @@
                 this.setInit();
             }
         },
-        beforeDestroy() {
+        beforeUnmount() {
             if (!this.chart) {
                 return
             }
@@ -236,5 +236,3 @@
 <style lang="less" scoped>
      
 </style>
-
-

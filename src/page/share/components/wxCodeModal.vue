@@ -3,7 +3,7 @@
     :append-to-body="true"
     :width="wxModal.width"
     :height="wxModal.height"
-    :visible.sync="wxModal.show"
+    v-model:visible="wxModal.show"
     :before-close="handleClose"
     >
         <div class="wxContent">
@@ -18,27 +18,32 @@
 	import { shareUrl } from "@/utils/env";
 
 	export default {
-	  name:'wxCodeModal',
-	  data(){
-			return {
-				qrcodeObj:{
-					text:shareUrl, // 要分享的网页路径
-					width:190,
-					height:190,
-					colorDark: '#000000',
-					colorLight: '#ffffff',
-					correctLevel: QRCode.CorrectLevel.H
-				}
-				
-			}
-        },
+        emits: ["hideWxCodeModal"],
+        name:'wxCodeModal',
+
+        data(){
+              return {
+                  qrcodeObj:{
+                      text:shareUrl, // 要分享的网页路径
+                      width:190,
+                      height:190,
+                      colorDark: '#000000',
+                      colorLight: '#ffffff',
+                      correctLevel: QRCode.CorrectLevel.H
+                  }
+                  
+              }
+          },
+
         props:{
             wxModal:Object
         },
-		mounted(){
+
+        mounted(){
 
 		},
-		methods: {
+
+        methods: {
             creatQrCode() {
                 const qrcode = new QRCode(this.$refs.qrCodeUrl5, this.qrcodeObj)
 			},
@@ -47,6 +52,7 @@
             }
 
         },
+
         watch:{
             'wxModal.show': {
                 handler(newName, oldName) {
@@ -57,7 +63,7 @@
                 immediate: true
             }
         }
-	}
+    };
 </script>
 
 <style lang="less" scoped>

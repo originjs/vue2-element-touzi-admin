@@ -8,7 +8,7 @@
                 label="序号"
                 align='center'
                 width="80">
-                <template slot-scope="scope">
+                <template v-slot="scope">
                     {{scope.$index+1}}
                 </template>
             </el-table-column>
@@ -24,7 +24,7 @@
                 align='center'
                 width="120"
                 sortable>
-                <template slot-scope="scope">  
+                <template v-slot="scope">  
                     <span style="color:#CC0033">{{ scope.row.orderMoney }}</span>
                 </template>
             </el-table-column>
@@ -34,7 +34,7 @@
                 align='center'
                 width="120"
                 sortable>
-                <template slot-scope="scope">  
+                <template v-slot="scope">  
                     <span style="color:#00d053;">+{{ scope.row.incomeMoney }}</span>
                 </template>
             </el-table-column>
@@ -43,7 +43,7 @@
                 label="主要投资项目"
                 align='center'
                 width="120">
-            <template slot-scope="scope">
+            <template v-slot="scope">
                 <el-tag
                     type="info"
                         close-transition>
@@ -75,7 +75,7 @@
                 label="备注"
                 align='left'
                 >
-                <template slot-scope="scope">
+                <template v-slot="scope">
                     <span style="color:#3366CC">{{scope.row.remarks}}</span>
             </template>
             </el-table-column>

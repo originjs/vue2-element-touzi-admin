@@ -1,5 +1,5 @@
-import Vue from 'vue'
-import Router from 'vue-router'
+import * as Vue from 'vue';
+import Router, { createRouter, createWebHistory } from 'vue-router';
 import { Layout,Content }  from "../layout"; // 页面整体布局
 import { topRouterMap } from "./topRouter";
 
@@ -61,11 +61,10 @@ export const constantRouterMap = [
 ]
 
 	//注册路由
-export default new Router({
-	mode:'history', // 默认为'hash'模式
-	base: '/permission/', // 添加跟目录,对应服务器部署子目录
-	routes: constantRouterMap
-})
+export default createRouter({
+    history: createWebHistory('/permission/'),
+    routes: constantRouterMap
+});
 
   //异步路由（需要权限的页面）
 export const asyncRouterMap = [

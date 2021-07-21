@@ -165,5 +165,3 @@
         border-radius: 10px;
      }	
 </style>
-
-

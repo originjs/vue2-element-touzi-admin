@@ -1,5 +1,5 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
+import * as Vue from 'vue';
+import * as Vuex from 'vuex';
 if(process.env.NODE_ENV === "development"){
     Vue.use(Vuex) 
 } 
@@ -9,7 +9,7 @@ import permission from './modules/permission'
 import money from './modules/money'
 import menu from './modules/menu'
 
-export default new Vuex.Store({
+export default Vuex.createStore({
     modules: {
         user,
         permission,

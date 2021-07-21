@@ -2,7 +2,7 @@ import router from './router'
 import store from './store'
 import NProgress from 'nprogress' // Progress 进度条
 process.env.NODE_ENV === "development" && import('nprogress/nprogress.css')
-import { Message } from 'element-ui'
+import { ElMessage as Message } from "element-plus"
 import { getToken } from '@/utils/auth' // 验权(从cookie中获取)
 import { getUserInfo } from "@/api/user";
 import {
@@ -38,7 +38,7 @@ router.beforeEach((to, from, next) => {
           store.commit("SET_NAME",userList.name);
           store.commit("SET_AVATAR",userList.avatar);
           store.dispatch('GenerateRoutes', { "roles":userList.roles }).then(() => { // 根据roles权限生成可访问的路由表
-            router.addRoutes(store.getters.addRouters) // 动态添加可访问权限路由表
+            store.getters.addRouters.forEach(item => router.addRoute(item)) // 动态添加可访问权限路由表
             next({ ...to, replace: true }) // hack方法 确保addRoutes已完成
           })
         }).catch((err) => {

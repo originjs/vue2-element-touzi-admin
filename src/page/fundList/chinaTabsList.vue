@@ -3,35 +3,35 @@
         <div class="tabContainer" ref="tabContainer">
             <el-tabs type="border-card">
                 <el-tab-pane>
-                    <span slot="label" @click="toggleTabs('eastChina')"><icon-svg icon-class="icondashboard" />华东区域</span>
+                    <template v-slot:label><span  @click="toggleTabs('eastChina')"><icon-svg icon-class="icondashboard" />华东区域</span></template>
                     <china-tabs-table :toggleData="toggleData"></china-tabs-table>
                 </el-tab-pane>
                 <el-tab-pane>
-                    <span slot="label" @click="toggleTabs('southChina')"><icon-svg icon-class="iconecharts" />华南区域</span>
+                    <template v-slot:label><span  @click="toggleTabs('southChina')"><icon-svg icon-class="iconecharts" />华南区域</span></template>
                     <china-tabs-table :toggleData="toggleData"></china-tabs-table>
                 </el-tab-pane>
                 <el-tab-pane>
-                    <span slot="label" @click="toggleTabs('centralChina')"><icon-svg icon-class="iconinfo" />华中区域</span>
+                    <template v-slot:label><span  @click="toggleTabs('centralChina')"><icon-svg icon-class="iconinfo" />华中区域</span></template>
                     <china-tabs-table :toggleData="toggleData"></china-tabs-table>
                 </el-tab-pane>
                 <el-tab-pane>
-                    <span slot="label" @click="toggleTabs('northChina')"><icon-svg icon-class="iconpermission" />华北区域</span>
+                    <template v-slot:label><span  @click="toggleTabs('northChina')"><icon-svg icon-class="iconpermission" />华北区域</span></template>
                     <china-tabs-table :toggleData="toggleData"></china-tabs-table>
                 </el-tab-pane>
                 <el-tab-pane>
-                    <span slot="label" @click="toggleTabs('northwestChina')"><icon-svg icon-class="iconuser" />西北区域</span>
+                    <template v-slot:label><span  @click="toggleTabs('northwestChina')"><icon-svg icon-class="iconuser" />西北区域</span></template>
                     <china-tabs-table :toggleData="toggleData"></china-tabs-table>
                 </el-tab-pane>
                 <el-tab-pane>
-                    <span slot="label" @click="toggleTabs('southwestChina')"><icon-svg icon-class="iconError" />西南地区</span>
+                    <template v-slot:label><span  @click="toggleTabs('southwestChina')"><icon-svg icon-class="iconError" />西南地区</span></template>
                     <china-tabs-table :toggleData="toggleData"></china-tabs-table>
                 </el-tab-pane>
                 <el-tab-pane>
-                     <span slot="label" @click="toggleTabs('northeastChina')"><icon-svg icon-class="iconfufei0" />东北地区</span>
+                     <template v-slot:label><span  @click="toggleTabs('northeastChina')"><icon-svg icon-class="iconfufei0" />东北地区</span></template>
                      <china-tabs-table :toggleData="toggleData"></china-tabs-table>
                 </el-tab-pane>
                 <el-tab-pane>
-                     <span slot="label" @click="toggleTabs('specialareaChina')"><icon-svg icon-class="iconpay1" />台港澳地区</span>
+                     <template v-slot:label><span  @click="toggleTabs('specialareaChina')"><icon-svg icon-class="iconpay1" />台港澳地区</span></template>
                      <china-tabs-table :toggleData="toggleData"></china-tabs-table>
                 </el-tab-pane>
             </el-tabs>
@@ -79,5 +79,3 @@
 <style lang="less" scoped>
  
 </style>
-
-

@@ -9,8 +9,8 @@
             :active-text-color="menuObj.activeTextColor"
             :default-active="$route.path" 
             >
-            <template v-for="(item,index) in topRouters">
-                <router-link :to="$route.matched[1].path+'/'+item.path" :key="index">
+            <template v-for="(item,index) in topRouters" :key="index">
+                <router-link :to="$route.matched[1].path+'/'+item.path" >
                     <el-menu-item :index="$route.matched[1].path+'/'+item.path">
                       {{ $t(`commons.${item.path}`) }}
                     </el-menu-item>

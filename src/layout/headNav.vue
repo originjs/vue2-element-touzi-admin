@@ -50,7 +50,7 @@
                        mode="horizontal" 
                        >
                         <el-submenu index="1" popper-class="langItem">
-                            <template slot="title">
+                            <template v-slot:title>
                                 <img :src="langLogo" class='langAvatar' alt="">
                             </template>
                             <el-menu-item index="1-1" @click="changeLocale('zh')">
@@ -64,7 +64,7 @@
                         </el-submenu>
 
                         <el-submenu index="2"  popper-class="infoItem">
-                            <template slot="title">
+                            <template v-slot:title>
                                 <div class='welcome'>
                                     <span class="name">{{$t('commons.hi')}},</span>
                                     <span class='name avatarname'> {{ $t(`commons.${name}`)}}</span>
@@ -183,7 +183,7 @@
     }
 </script>
 
-<style scoped lang='less'>
+<style lang="less" scoped>
     .right-nav{
         display: flex;
         flex: 1;

@@ -17,7 +17,9 @@
 
 <script>
   export default {
+      emits: ["handleCurrentChange", "handleSizeChange"],
       name:'pagination',
+
       data(){
           return {
             paginations: {
@@ -28,15 +30,19 @@
             },
           }
       },
+
       props:{
           pageTotal:Number
       },
+
       created(){
 
       },
+
       mounted(){
 
       },
+
       methods:{ 
            // 上下分页 pageIndex
           handleCurrentChange(page){
@@ -47,7 +53,7 @@
               this.$emit('handleSizeChange',page_size);
           }
       }
-  }
+  };
 </script>
 
 <style lang="less" scoped>

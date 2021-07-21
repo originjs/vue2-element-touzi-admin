@@ -1,8 +1,8 @@
 <template>
     <div class="">
-        <transition name="fade">
-            <router-view></router-view>
-        </transition>
+        <router-view  v-slot="{ Component }"><transition name="fade">
+            <component :is="Component" />
+        </transition></router-view>
     </div>
 </template>
 <script>
@@ -25,7 +25,7 @@
     }
 </script>
 
-<style scoped lang='less'>
+<style lang="less" scoped>
     .fade-enter-active,
     .fade-leave-active {
         transition: opacity .3s

@@ -17,7 +17,7 @@
         mounted(){
 			this.loadChart();
 		},
-		beforeDestroy() {
+		beforeUnmount() {
 			if (!this.myChart) {
 				return
 			}

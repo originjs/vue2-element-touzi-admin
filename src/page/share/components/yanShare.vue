@@ -58,27 +58,31 @@
 	import { shareUrl } from "@/utils/env";
 
 	export default {
-	  name:'hengShare',
-	  data(){
-			return {
-				qrcode:{
-					show:false
-				},
-				qrcodeObj:{
-					text:shareUrl, // 要分享的网页路径
-					width:80,
-					height:80,
-					colorDark: '#000000',
-					colorLight: '#ffffff',
-					correctLevel: QRCode.CorrectLevel.H
-				}
-				
-			}
-		},
-		mounted(){
+        emits: ["shareToQQ", "shareToQQzone", "shareToWeibo", "shareToDouban"],
+        name:'hengShare',
+
+        data(){
+              return {
+                  qrcode:{
+                      show:false
+                  },
+                  qrcodeObj:{
+                      text:shareUrl, // 要分享的网页路径
+                      width:80,
+                      height:80,
+                      colorDark: '#000000',
+                      colorLight: '#ffffff',
+                      correctLevel: QRCode.CorrectLevel.H
+                  }
+                  
+              }
+          },
+
+        mounted(){
 			this.creatQrCode();
 		},
-		methods: {
+
+        methods: {
 			showqrcode(){
 				this.qrcode.show  = true;
 			},
@@ -102,7 +106,7 @@
 			}
 
 		}
-	}
+    };
 </script>
 
 <style lang="less" scoped>

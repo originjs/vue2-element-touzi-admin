@@ -15,6 +15,8 @@
 
 <script>
 export default {
+  emits: ["change"],
+
   computed: {
     roles() {
       return this.$store.getters.roles
@@ -30,7 +32,7 @@ export default {
       }
     }
   }
-}
+};
 
 /**
  * 如何获取到我的权限:
@@ -50,5 +52,3 @@ export default {
     margin-bottom: 20px;
   }
 </style>
-
-

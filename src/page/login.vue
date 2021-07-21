@@ -9,11 +9,13 @@
 		    	<el-form :model="loginForm" :rules="rules" ref="loginForm" class="loginForm">
 					<el-form-item prop="username" class="login-item">
 					    <span class="loginTips"><icon-svg icon-class="iconuser" /></span>
-						<el-input @keyup.enter.native ="submitForm('loginForm')"  class="area" type="text" placeholder="用户名" v-model="loginForm.username" ></el-input>
+						<!-- native modifier has been removed, please confirm whether the function has been affected  -->
+						<el-input @keyup.enter ="submitForm('loginForm')"  class="area" type="text" placeholder="用户名" v-model="loginForm.username" ></el-input>
 					</el-form-item>
 					<el-form-item prop="password" class="login-item"> 
 					    <span class="loginTips"><icon-svg icon-class="iconLock" /></span>
-						<el-input @keyup.enter.native ="submitForm('loginForm')" class="area" type="password" placeholder="密码" v-model="loginForm.password"></el-input>
+						<!-- native modifier has been removed, please confirm whether the function has been affected  -->
+						<el-input @keyup.enter ="submitForm('loginForm')" class="area" type="password" placeholder="密码" v-model="loginForm.password"></el-input>
 					</el-form-item>
 					<el-form-item>
 				    	<el-button type="primary"  @click="submitForm('loginForm')" class="submit_btn">SIGN IN</el-button>

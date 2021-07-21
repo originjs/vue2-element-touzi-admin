@@ -1,6 +1,6 @@
 <template>
     <el-dialog 
-        :visible.sync="isVisible"
+        v-model:visible="isVisible"
         :title="addFundDialog.title" 
         :close-on-click-modal='false'
         :close-on-press-escape='false'
@@ -71,7 +71,9 @@
    import AreaJson from "@/assets/datas/area.json"
 
   export default {
+      emits: ["closeDialog", "getFundList", "getFundList"],
       name:'addFundDialogs',
+
       data(){
           let validateData = (rule, value, callback) => {
                 if(value === ''){
@@ -144,16 +146,20 @@
             }
           }
       },
+
       props:{
           isShow:Boolean,
           dialogRow:Object
       },
+
       computed:{
         ...mapGetters(['addFundDialog']),
       },
+
       created(){
             this.areaData = AreaJson
       },
+
       mounted(){
         if(this.addFundDialog.type === 'edit'){
             this.form = this.dialogRow;
@@ -167,6 +173,7 @@
             })
         }
       },
+
       methods:{
           getCascaderObj(val, opt){
             return val.map(function (value, index, array) {
@@ -222,7 +229,7 @@
             })
           }
       }
-  }
+  };
 </script>
 
 <style lang="less" scoped>

@@ -2,12 +2,12 @@
 <template>
   <div class="logContainer">
     <el-card class="box-card">
-      <div slot="header" class="clearfix">
+      <template v-slot:header><div  class="clearfix">
         <a :href="github" target="_blank">
            <icon-svg icon-class="iconGithub" />
         </a>
         <span>项目更新日志：</span>
-      </div>
+      </div></template>
       <div class="logArea el-scrollbar">
             <div class="item" v-for="(item,index) in logsData" :key="index">
               <p class="timeArea">
@@ -84,4 +84,3 @@
       clear: both
   }
 </style>
-

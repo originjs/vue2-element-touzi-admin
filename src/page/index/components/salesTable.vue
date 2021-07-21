@@ -11,7 +11,7 @@
         label="USERNAME"
         width="150"
       >
-        <template slot-scope="scope">
+        <template v-slot="scope">
             <img class="userImg" :src="userImg" alt="tuxiang"/>
             {{(scope.row.username).substring(0,12)}}
         </template>
@@ -22,7 +22,7 @@
         label="PRICE"
         width="80"
       >
-        <template slot-scope="scope">
+        <template v-slot="scope">
           <span v-if="scope.row.status === 1" class="saleColor">$ {{scope.row.price}}</span>
           <span v-if="scope.row.status === 2" class="taxColor">$ {{scope.row.price}}</span>
           <span v-if="scope.row.status === 3" class="extenedColor">$ {{scope.row.price}}</span>
@@ -34,7 +34,7 @@
         label="DATE"
         width="160"
       >
-        <template slot-scope="scope">
+        <template v-slot="scope">
            <icon-svg icon-class="icontime" />
            {{scope.row.date}}
         </template>
@@ -44,7 +44,7 @@
         prop="status"
         label="STATUS"
         >
-        <template slot-scope="scope">
+        <template v-slot="scope">
           <span v-if="scope.row.status === 1" class="saleBgcolor">SALE</span>
           <span v-if="scope.row.status === 2" class="taxBgcolor">TAX</span>
           <span v-if="scope.row.status === 3" class="extenedBgcolor">EXTENDED</span>

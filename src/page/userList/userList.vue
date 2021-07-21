@@ -14,7 +14,7 @@
                    label="序号"
                    width="60"
                    align='center'>
-                   <template slot-scope="scope">
+                   <template v-slot="scope">
                        <span>{{scope.$index+(paginations.pageIndex - 1) * paginations.pageSize + 1}} </span>
                     </template>
                 </el-table-column>
@@ -149,6 +149,3 @@
        text-align: right;
    }
 </style>
-
-
-
