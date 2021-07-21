@@ -20,7 +20,7 @@ const cdn = {
   // 生产环境
   build: {
       css: [
-        'https://cdn.bootcss.com/element-ui/2.11.1/theme-chalk/index.css',
+        'https://cdn.bootcss.com/element-plus/1.0.2-beta.55/theme-chalk/index.css',
         'https://cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css'
       ],
       js: [
@@ -29,7 +29,7 @@ const cdn = {
         'https://cdn.bootcss.com/vuex/2.3.1/vuex.min.js',
         'https://cdn.bootcss.com/axios/0.19.0/axios.min.js',
         'https://cdn.bootcss.com/vue-i18n/8.13.0/vue-i18n.min.js',
-        'https://cdn.bootcss.com/element-ui/2.11.1/index.js',
+        'https://cdn.bootcss.com/element-plus/1.0.2-beta.55/2.11.1/index.js',
         'https://cdn.bootcss.com/echarts/3.8.5/echarts.min.js',
         'https://cdn.bootcss.com/Mock.js/1.0.1-beta3/mock-min.js',
         'https://cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js',
@@ -120,7 +120,7 @@ module.exports = {
         "vuex": "Vuex",
         "vue-i18n": "VueI18n",
         "axios": "axios",
-        'element-ui': 'ELEMENT',
+        'element-plus': 'ELEMENT',
         'echarts':'echarts',
         'mockjs':'Mock',
         'nprogress':'NProgress',
