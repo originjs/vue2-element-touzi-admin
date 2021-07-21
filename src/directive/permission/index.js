@@ -1,12 +1,12 @@
 import permission from './permission'
 
-const install = function(Vue) {
-  Vue.directive('permission', permission)
+const install = function(app) {
+  app.directive('permission', permission)
 }
 
-if (window.Vue) {
+if (window.app) {
   window['permission'] = permission 
-  Vue.use(install); // eslint-disable-line
+  app.use(install); // eslint-disable-line
 }
 
 permission.install = install 

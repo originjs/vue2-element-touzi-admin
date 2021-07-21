@@ -1,8 +1,7 @@
 
 // 引入i18n国际化插件
 import { getToken} from '@/utils/auth'
-import * as Vue from 'vue';
-process.env.NODE_ENV === "development" ? Vue.use(VueI18n) : null;
+// process.env.NODE_ENV === "development" ? Vue.use(VueI18n) : null;
 
 import enLocale from './en'
 import zhLocale from './zh'
