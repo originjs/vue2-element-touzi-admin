@@ -1,9 +1,9 @@
 import * as Vue from 'vue';
-import Router, { createRouter, createWebHistory } from 'vue-router';
+import { createRouter, createWebHistory } from 'vue-router';
 import { Layout,Content }  from "../layout"; // 页面整体布局
 import { topRouterMap } from "./topRouter";
 
-process.env.NODE_ENV === "development" ? Vue.use(Router) : null;
+// process.env.NODE_ENV === "development" ? Vue.use(Router) : null;
 
 function filterTopRouterMap(name){
 	let router = topRouterMap.find((item) => {
@@ -277,7 +277,7 @@ export const asyncRouterMap = [
 			}
     ]
   },
-	{ path: '*', redirect: '/404', hidden: true }
+	{ path: '/:pathMatch(.*)*', redirect: '/404', hidden: true }
 	];
 	
 	/**
