@@ -1,6 +1,6 @@
 <template>
     <el-dialog 
-        v-model:visible="isVisible"
+        v-model="isVisible"
         :title="addFundDialog.title" 
         :close-on-click-modal='false'
         :close-on-press-escape='false'

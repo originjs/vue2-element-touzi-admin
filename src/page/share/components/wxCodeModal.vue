@@ -3,7 +3,7 @@
     :append-to-body="true"
     :width="wxModal.width"
     :height="wxModal.height"
-    v-model:visible="wxModal.show"
+    v-model="wxModal.show"
     :before-close="handleClose"
     >
         <div class="wxContent">

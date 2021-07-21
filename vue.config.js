@@ -61,6 +61,7 @@ module.exports = {
   },
    // webpack相关配置
   chainWebpack: (config) => {
+    config.resolve.alias.set('vue-i18n', 'vue-i18n/dist/vue-i18n.cjs.js')
     config.entry.app = ['./src/main.js']
     config.resolve.alias
       .set('@', resolve('src'))
